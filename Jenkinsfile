@@ -15,8 +15,8 @@ pipeline {
         stage('Build') 
 		{
             steps {
-                sh './gradlew build --no-daemon'
-		archiveArtifacts 'dist/*.zip'
+               sh './gradlew build --no-daemon'
+                archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
 	 stage('DeployToStaging') {
